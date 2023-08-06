@@ -1,9 +1,10 @@
 import React from 'react'
+import '/src/index.css'
 
 const Link = ({title, to}) => {
   return (
 
-    <a href={to}>{title}</a>
+    <a className='title-font text-3xl md:text-4xl' href={to}>{title}</a>
     
   )
 }

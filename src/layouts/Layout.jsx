@@ -4,13 +4,14 @@ import Footer from '../components/Footer/Footer'
 
 const Layout = ({children}) => {
   return (
-    <div className='w-full min-h-screen flex flex-col'>
+    <div className='flex flex-col min-h-screen w-full'>
       <Header />
-        <main className='grow'>
-            {
-              children
-            }
-        </main>
+      <main className='grow'>
+          {
+              
+            children
+          }
+      </main>
       <Footer />
     </div>
   )

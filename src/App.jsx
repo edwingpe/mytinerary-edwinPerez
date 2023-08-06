@@ -9,8 +9,6 @@ function App() {
       <Layout>
         <Home />
       </Layout>
-
-  
     </>
   )
 }
