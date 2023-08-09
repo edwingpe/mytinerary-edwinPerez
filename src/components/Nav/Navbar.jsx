@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
-import Link from '../Link/Link'
+import { Link } from 'react-router-dom'
 import Login from '../Login/Login'
+import '/src/index.css'
+
 
 const Navbar = () => {
   const links = [
-    {title: 'home', to: '/home'},
+    {title: 'home', to: '/'},
     {title: 'cities', to: '/cities'},
   ]
 
@@ -29,7 +31,7 @@ const Navbar = () => {
       {/* Desktop menu */}
       <nav className='hidden md:flex items-center gap-5 px-5'>
         {
-          links.map((link) => (<Link key={link.title} title={link.title} to={link.to}/>))
+          links.map((link) => (<Link className='title-font text-3xl md:text-4xl' key={link.title} to={link.to}>{link.title}</Link>))
         }
         <Login />
       </nav>
@@ -38,8 +40,9 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={!nav ? 'hidden' :'fixed top-0 left-0 w-full h-screen bg-yellow-500 flex flex-col justify-center items-center'} >
           {
-            links.map((link) => (<Link key={link.title} title={link.title} to={link.to}/>))
+            links.map((link) => (<Link className='title-font text-3xl md:text-4xl' key={link.title} to={link.to}>{link.title}</Link>))
           } 
+          <Login />
       </div>
     </>
 

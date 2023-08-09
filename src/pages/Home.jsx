@@ -1,10 +1,18 @@
 import React from 'react'
+import Hero from '../components/Hero/Hero'
 
 const Home = () => {
   return (
-    <div className=''>
-      Esto es el home
-    </div>
+    <section className=''>
+      <div className='py-20'>
+        <Hero />
+      </div>
+      <div className=''>
+        aca va el carrusel
+      </div>
+
+
+    </section>
   )
 }
 

@@ -1,15 +1,12 @@
+import { RouterProvider } from 'react-router-dom'
+import router from './router/router'
 import './App.css'
-import Home from './pages/Home'
-import Layout from './layouts/Layout'
+
 
 function App() {
 
   return (
-    <>
-      <Layout>
-        <Home />
-      </Layout>
-    </>
+    <RouterProvider  router={router}/>
   )
 }
 
