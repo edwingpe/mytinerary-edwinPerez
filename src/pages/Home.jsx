@@ -8,7 +8,7 @@ const Home = () => {
         <Hero />
       </div>
       <div className=''>
-        aca va el carrusel
+        Carrousel under construction
       </div>
 
 
