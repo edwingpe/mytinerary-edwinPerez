@@ -10,7 +10,6 @@ const Home = () => {
       </div>
       <div className=''>
         aca va el carrusel
-        <Carousel />
       </div>
 
 
