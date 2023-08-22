@@ -1,8 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import  Card  from '../components/Card/Card'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-function Cities() {
+const Cities = () => {
+  const [cities, setCities] = useState();
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/cities?city=')
+      .then(response => setCities(response.data.cities))
+      .catch(err => console.log(err))
+  }, []);
+
+  const handleInputChange = async (event) => {
+
+    try {
+      const response = await axios.get(`http://localhost:8000/api/cities?city=${event.target.value}`)
+      setCities(response.data.cities)
+
+    } catch (error) {
+      console.log(error)
+
+    }
+
+  }
+
+
   return (
-    <div>Cities under construction.</div>
+    <div className='container mx-auto'>Find Your City.
+        <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text" />
+        <div className='flex flex-wrap justify-center gap-5'>
+            {
+              cities?.map((city) => {
+                return (
+                  <Link key = {city._id} to= {`/cities/${city._id}`}>
+                      <Card city={city.city} country={city.country} image={city.image} />
+                  </Link>
+                )
+              })
+            }
+        </div>
+    </div>
   )
 }
 
