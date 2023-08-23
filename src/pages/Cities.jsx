@@ -25,10 +25,10 @@ const Cities = () => {
 
   }
 
-
   return (
-    <div className='container mx-auto'>Find Your City.
-        <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text" />
+    <div className='container flex flex-col shrink-0 gap-5 mx-auto py-10'>Find Your City.
+        <label htmlFor=""></label>
+        <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text"/>
         <div className='flex flex-wrap justify-center gap-5'>
             {
               cities?.map((city) => {

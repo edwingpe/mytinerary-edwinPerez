@@ -9,7 +9,7 @@ const Home = () => {
         <Hero />
       </div>
       <div className=''>
-        aca va el carrusel
+        Carousel under construction
       </div>
 
 
