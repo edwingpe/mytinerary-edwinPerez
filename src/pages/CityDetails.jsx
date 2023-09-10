@@ -1,26 +1,29 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { get_city_byId } from '../store/actions/cityActions'
 import axios from 'axios'
 
 
 const CityDetails = () => {
-    const [city, setCity] = useState()
     const { id } = useParams();
+    const city =useSelector((store) => store.cityReducer.city)
+    const dispatch = useDispatch();
 
     useEffect(() => {
-      axios.get(`http://localhost:8000/api/cities/${id}`)
-      .then(response => {
-        console.log(response)
-        setCity(response.data.city)
-      })
-      .catch(error => console.log(error))
+      dispatch(get_city_byId(id))
     },[])
 
   return (
-    <div className='container flex flex-col justify-center mx-auto'>CityDetails under construction
-        {city?.city}
-        {city?.country}
-        <img className='w-200 h-200' src={`${city?.image}`} alt="" />
+    <div className='container flex flex-col justify-center items-center mx-auto mt-32 px-5 gap-3'>
+      <div id='title-box' className='flex justify-center gap-3'>
+        <h2 className=' font-thin text-4xl uppercase'>{city?.city}</h2>
+        <span className='font-bold text-4xl uppercase'>{city?.country}</span>
+      </div>
+      <img className='border rounded-lg w-200 h-200' src={`${city?.image}`} alt="" />
+      <section id='description-box' className=' text-lg normal-case font-light text-justify py-2'>
+        {city?.description}
+      </section>
     </div>
   )
 }

@@ -2,18 +2,13 @@ import React from 'react'
 import Hero from '../components/Hero/Hero'
 import Carousel from '../components/Carousel/Carousel'
 
+
 const Home = () => {
   return (
-    <section className=''>
-      <div className='py-20'>
-        <Hero />
-      </div>
-      <div className=''>
-        Carousel under construction
-      </div>
-
-
-    </section>
+    <div className="grow bg-[url('/1.jpg')] bg-cover bg-center bg-fixed">
+      <Hero/>
+      <Carousel/>    
+    </div>
   )
 }
 

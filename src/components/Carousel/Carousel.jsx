@@ -2,8 +2,8 @@ import React from 'react'
 
 function Carousel() {
   return (
-    <div className="carousel carousel-center rounded-box">
-        
+    <div className="container mx-auto">
+        under construction
     </div>
   )
 }

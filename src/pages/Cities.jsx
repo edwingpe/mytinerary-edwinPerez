@@ -22,10 +22,10 @@ const Cities = () => {
   }
 
   return (
-    <div className='container flex flex-col shrink-0 gap-5 mx-auto py-10'>Find Your City.
+    <div className='container flex flex-col gap-5 mt-32 mx-auto py-10'>Find Your City.
         <label htmlFor=""></label>
         <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text"/>
-        <div className='flex flex-wrap justify-center gap-5'>
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-5'>
             {
                 cities?.length > 0
                 ? cities?.map((city) => {
@@ -35,7 +35,7 @@ const Cities = () => {
                       </Link>
                   )
                 })
-                : <h2>Hola</h2>
+                : <h2>La busqueda no dio resultados :(</h2>
             }
         </div>
     </div>
