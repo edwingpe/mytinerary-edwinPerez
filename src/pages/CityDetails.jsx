@@ -26,8 +26,8 @@ const CityDetails = () => {
         {city?.description}
       </section>
 
-      <section id='itineraries-box'>
-        <Itineraries cityid = {id}/>
+      <section id='itineraries-box' className='container'>
+        <Itineraries key={ city._id}  cityid = {id}/>
       </section>
     </div>
   )
