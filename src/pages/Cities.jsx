@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { get_cities, filter_cities } from '../store/actions/cityActions'
 
-
 const Cities = () => {
 
   const cities = useSelector((store) => store.cityReducer.cities)
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {

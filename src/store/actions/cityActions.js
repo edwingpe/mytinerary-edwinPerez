@@ -29,7 +29,7 @@ export const filter_cities = createAsyncThunk('filter_cities', async (obj) =>{
 export const get_city_byId = createAsyncThunk('get_city_byId', async (id) =>{
     try{
         const response =  await axios.get(`http://localhost:8000/api/cities/${id}`)
-        console.log(response)
+
         return {
             city: response.data.city
         } 

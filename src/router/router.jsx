@@ -3,6 +3,8 @@ import Home from '../pages/Home'
 import Cities from '../pages/Cities'
 import Layout from "../layouts/Layout";
 import CityDetails from "../pages/CityDetails";
+import Itineraries from "../components/Itineraries/Itineraries";
+import ItineraryCard from "../components/ItineraryCard/ItineraryCard";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +22,17 @@ const router = createBrowserRouter([
             {
                 path: '/cities/:id',
                 element: <CityDetails />
-            }
+            },
+            {
+                path: '/itineraries',
+                element: <Itineraries />
+            },
+            {
+                path: '/itineraries/:id',
+                element: <ItineraryCard />
+            },
+            
+
 
         ]
     },

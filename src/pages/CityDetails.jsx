@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { get_city_byId } from '../store/actions/cityActions'
-import axios from 'axios'
+import Itineraries from '../components/Itineraries/Itineraries'
 
 
 const CityDetails = () => {
     const { id } = useParams();
-    const city =useSelector((store) => store.cityReducer.city)
+    const city = useSelector((store) => store.cityReducer.city)
     const dispatch = useDispatch();
+
 
     useEffect(() => {
       dispatch(get_city_byId(id))
@@ -23,6 +24,10 @@ const CityDetails = () => {
       <img className='border rounded-lg w-200 h-200' src={`${city?.image}`} alt="" />
       <section id='description-box' className=' text-lg normal-case font-light text-justify py-2'>
         {city?.description}
+      </section>
+
+      <section id='itineraries-box'>
+        <Itineraries cityid = {id}/>
       </section>
     </div>
   )
