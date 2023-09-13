@@ -21,9 +21,12 @@ const Cities = () => {
   }
 
   return (
-    <div className='container flex flex-col gap-5 mt-32 mx-auto py-10'>Find Your City.
-        <label htmlFor=""></label>
-        <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text"/>
+    <div className='container flex flex-col gap-5 mt-20 mx-auto py-10'>
+        <h1 className=' font-bold text-3xl text-center uppercase mb-10'>cities</h1>
+        <div className='container flex justify-around mx-auto'>
+          <label className=' font-thin text-2xl uppercase'>Find your city:</label>
+          <input onChange={handleInputChange} className='border-2 border-gray-700 rounded-md py-1 px-2' type="text"/>
+        </div>
         <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-5'>
             {
                 cities?.length > 0

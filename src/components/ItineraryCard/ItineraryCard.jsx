@@ -1,3 +1,4 @@
+import { Price } from "./Price"
 
 const ItineraryCard = ({ itinerary }) => {
   const hashtagArray = (itinerary.hashtags)
@@ -9,17 +10,16 @@ const ItineraryCard = ({ itinerary }) => {
         <p className="text-center font-thin text-3xl capitalize"> {itinerary.user.name} </p>
       </div>
       <div className="flex flex-col grow">
-        <h2 className="text-center font-bold text-2xl uppercase"> {itinerary.name}</h2>
+        <h2 className="text-center font-bold text-2xl my-2 uppercase"> {itinerary.name}</h2>
         <div className="flex items-center justify-around grow">
-          <p> {itinerary.price}price</p>
-          <p> {itinerary.duration} hours </p>
+          <Price price={itinerary.price}/>
+          <p className=" font-semibold text-xl"> {itinerary.duration} hours </p>
         </div>
-
         <div className="flex flex-col sm:flex-row">
           <div className="flex grow gap-2 px-2 justify-around">
             {
               hashtagArray.map((hashtag) => (
-                <p>#{hashtag}</p>
+                <p className="font-thin text-lg sm:text-xl">#{hashtag}</p>
               ))
             }
           </div>
