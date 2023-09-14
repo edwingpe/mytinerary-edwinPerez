@@ -46,6 +46,7 @@ const Navbar = () => {
             <Link onClick={ () => dispatch( logout() )} to='/' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> logout </Link>
             </>)
             :(<>
+                <img className='w-[3.2rem] h-[3.2] rounded-full' src='/alien_avatar_default.png' alt="profile_photo" />
                 <Link to='/signin' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> signin </Link>
                 <Link to='/signup' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> signup </Link>  
               </>)

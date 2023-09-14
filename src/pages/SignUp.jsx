@@ -56,7 +56,7 @@ const SignUp = () => {
         </label>
         <label className='block'>
           <span>Password</span>
-          <input className='block border w-full mt-1' type="text" name='password' ref={password}/>
+          <input className='block border w-full mt-1' type="password" name='password' ref={password}/>
         </label>
         <label className='block'>
           <span>Country</span>

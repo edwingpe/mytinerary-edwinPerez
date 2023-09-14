@@ -40,7 +40,7 @@ export const signin_token = createAsyncThunk('signin_token', async () => {
         const token = localStorage.getItem( 'token' ) 
         const response = await axios.post( 'http://localhost:8000/api/auth/signin/token',{},{
             headers: {
-                Authorization : 'Bearer' + token
+                Authorization : `Bearer ${token}`
             }
         } )
         return {

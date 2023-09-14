@@ -32,7 +32,7 @@ const SignIn = () => {
         </label>
         <label className='block'>
           <span>Password</span>
-          <input className='block border w-full mt-1' type="text" name='password' ref={password}/>
+          <input className='block border w-full mt-1' type="password" name='password' ref={password}/>
         </label>
         <button className='px-4 py-2 rounded-lg my-5 bg-orange-300'>signup</button>
       </form>
