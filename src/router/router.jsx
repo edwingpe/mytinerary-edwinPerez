@@ -5,6 +5,8 @@ import Layout from "../layouts/Layout";
 import CityDetails from "../pages/CityDetails";
 import Itineraries from "../components/Itineraries/Itineraries";
 import ItineraryCard from "../components/ItineraryCard/ItineraryCard";
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,14 @@ const router = createBrowserRouter([
                 path: '/itineraries/:id',
                 element: <ItineraryCard />
             },
-            
+            {
+                path: '/signin',
+                element: <SignIn />
+            },
+            {
+                path: '/signup',
+                element: <SignUp />
+            },            
 
 
         ]

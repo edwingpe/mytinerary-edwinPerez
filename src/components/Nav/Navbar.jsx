@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import Login from '../Login/Login'
+import { useSelector, useDispatch } from 'react-redux'
 import '/src/index.css'
+import { logout } from '../../store/actions/userActions'
 
 
 const Navbar = () => {
+
+  const user = useSelector( store => store.users.user)
+  const dispatch = useDispatch()
   const links = [
-    {title: 'home', to: '/'},
-    {title: 'cities', to: '/cities'},
+    { title: 'home', to: '/' },
+    { title: 'cities', to: '/cities' },
+    { title: 'signin', to: '/signin' },
+    { title: 'signup', to: '/signup' }
   ]
 
   const [nav, setNav] = useState(false)
@@ -30,10 +36,24 @@ const Navbar = () => {
 
       {/* Desktop menu */}
       <nav className='hidden md:flex items-center gap-5 px-5'>
+        <Link to='/' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> home </Link>
+        <Link to='/cities' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> cities </Link>
         {
-          links.map((link) => (<Link className='title-font text-3xl md:text-4xl' key={link.title} to={link.to}>{link.title}</Link>))
+          user
+            ?
+            (<>
+            <img className='w-[3.2rem] h-[3.2] rounded-full' src={`${user.image}`} alt="profile_photo" />
+            <Link onClick={ () => dispatch( logout() )} to='/' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> logout </Link>
+            </>)
+            :(<>
+                <Link to='/signin' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> signin </Link>
+                <Link to='/signup' className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer'> signup </Link>  
+              </>)
         }
-        <Login />
+        
+        {/* {
+          links.map((link) => (<Link className='title-font text-3xl md:text-4xl hover:text-gray-700 hover:bg-gradient-to-r from-red-500 to-purple-500 hover:text-transparent hover:bg-clip-text hover:cursor-pointer' key={link.title} to={link.to}>{link.title}</Link>))
+        } */}
       </nav>
 
 
@@ -42,7 +62,6 @@ const Navbar = () => {
           {
             links.map((link) => (<Link className='title-font text-3xl md:text-4xl' key={link.title} to={link.to}>{link.title}</Link>))
           } 
-          <Login />
       </div>
     </>
 
