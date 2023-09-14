@@ -5,7 +5,7 @@ import Carousel from '../components/Carousel/Carousel'
 
 const Home = () => {
   return (
-    <div className="grow bg-[url('/1.jpg')] bg-cover bg-center bg-fixed">
+    <div className="grow bg-[url('/1.jpg')] bg-cover bg-center bg-fixed flex flex-col ">
       <Hero/>
       <Carousel/>    
     </div>

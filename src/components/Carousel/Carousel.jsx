@@ -21,7 +21,6 @@ function Carousel() {
         
         <CarouselSlide popularCities={popularCities}/>
         
-        
     </div>
   )
 }
