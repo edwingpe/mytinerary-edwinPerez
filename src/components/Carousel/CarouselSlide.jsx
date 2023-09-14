@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './style.css'
 
@@ -42,9 +43,11 @@ function CarouselSlide({popularCities}) {
             <button className='border-2 border-white/50 shadow-xl p-5 w-16 rounded-full bg-white' onClick={prevSlide}>L</button>
             {
                 popularCities.slice(currentState, imagesPerSlide).map((each, index) =>(
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col text-center'>
+                        <Link key = {each._id} to= {`/cities/${each._id}`}>
                         <img className='sm:w-[200px] sm:h-[200px] rounded-3xl mx-3 shadow-2xl border-4 border-white' src= {each.image} alt={each.id}/>
-                        <span className='font-thin text-center text-2xl pt-2'> {each.city}</span>
+                        <span className='font-thin text-2xl pt-2'>{each.city}</span>
+                        </Link>
                     </div>
                 ))
             }
