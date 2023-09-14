@@ -1,0 +1,53 @@
+/* style.css */
+  .slider {
+    width: 100%;
+    height: calc(60% /(16 / 9));
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    width: calc(100% * (8 / imagesPerSlide));
+    height: calc(100% * (8 / imagesPerSlide));
+    position: absolute;
+    transition: transform ease-out 0.45s;
+  }
+  
+  .slide {
+    width: calc(100% / (8 / imagesPerSlide));
+    height: calc(100% / (8 / imagesPerSlide));
+  }
+  
+  .slide img {
+    width: inherit;
+    height: inherit;
+  }
+  
+  .goLeft,
+  .goRight {
+    position: absolute;
+    top: calc(50% - (50px /2));
+  }
+  
+  .goLeft {
+     left: -50px;
+  }
+  
+  .goRight {
+     right: -50px;
+  }
+  
+  .goLeft:hover,
+  .goRight:hover {
+     opacity: .5;
+  }
+  
+  .goLeft,
+  .goRight {
+     color: white;
+     font-size:50px;
+     opacity:.3;
+  }
+  
